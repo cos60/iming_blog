@@ -1,0 +1,30 @@
+.category {
+    position: relative;
+    /* max-width: 15rem; */
+    background-color: #fff;
+    border-radius: 1rem;
+    min-height: 10rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.category li {
+    position: relative;
+    list-style: none;
+    height: 2rem;
+    margin-top: .5rem;
+    padding-left: 1rem;
+    line-height: 2rem;
+    cursor: pointer;
+    background-color: #E5E5E5;
+    border-radius: .5rem;
+    transition: .3s;
+}
+.listCount {
+    position: absolute;
+    right: 5px;
+    color: #999;
+}
+.category li:hover {
+    transform: translateX(.5rem);
+}

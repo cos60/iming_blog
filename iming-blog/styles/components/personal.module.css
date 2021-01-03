@@ -1,0 +1,33 @@
+.personal {
+    position: relative;
+    /* max-width: 15rem; */
+    background-color: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+.background {
+    position: relative;
+    height: 8rem;
+    background: url(https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2946470956,3918311025&fm=111&gp=0.jpg);
+    background-size: 100%;
+    margin-bottom: 2.2rem;
+}
+.avatarInfo {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+}
+.description {
+    padding: 1rem;
+    position: relative;
+    top: -1rem;
+    text-align: center;
+}
+.menu {
+    height: 3rem;
+}
+.logo {
+    font-size: 1.5rem;
+}

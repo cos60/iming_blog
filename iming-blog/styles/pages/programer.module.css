@@ -1,0 +1,26 @@
+.content {
+    margin-right: 1rem;
+}
+.contentItem {
+    height: 10rem;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+.contentTitle {
+    padding-top: 1rem;
+}
+.contentCover {
+    margin-right: 1rem;
+}
+.contentDescr {
+    color: #999;
+    height: 3rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.contentIcon span {
+    display: inline-block;
+    margin-right: .3rem;
+    color: #999;
+}

@@ -1,0 +1,19 @@
+.header {
+    height: 4rem;
+    line-height: 3rem;
+    background-color: rgb(221 203 207);
+    color: #fff;
+    margin-bottom: 20px;
+}
+.searchInput {
+    display: block;
+    width: 20rem;
+}
+
+.menu {
+    height: 3rem;
+    border-radius: 3px;
+}
+.logo {
+    font-size: 1.5rem;
+}

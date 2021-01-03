@@ -1,0 +1,62 @@
+html,
+body {
+  padding-bottom: 56px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-image: url('../public/女孩思考.jpg'); */
+
+  height: 100vh;
+  overflow: auto;
+  width: 100%;
+  opacity: 1;
+  
+}
+* {
+  opacity: 0.98;
+}
+
+body::before {
+  background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1936018656,343641975&fm=26&gp=0.jpg');
+  background-repeat: repeat;
+  background-position: top;
+  background-size: 100%;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(10px);
+}
+/* body::after {
+
+
+} */
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* .iming_code pre code {
+  display: block;
+  line-height: 22px;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  border-radius: 4px;
+  padding: 8px;
+  tab-size: 4;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+} */
+
