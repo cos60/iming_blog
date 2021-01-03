@@ -46,7 +46,7 @@ module.exports = appInfo => {
     domainWhiteList: [ '*' ]
   };
   config.cors = {
-    origin: 'http://www.iming.top', //只允许这个域进行访问接口
+    origin: 'http://*.iming.top', //只允许这个域进行访问接口
     credentials: true,   // 开启认证
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };
