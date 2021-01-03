@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'http://localhost:7001/default'
+const baseUrl = 'http://api.iming.top/default'
 
 export function getArticleList(params = {}) {
     return axios(`${baseUrl}/getArticleList`, { params })
