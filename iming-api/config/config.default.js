@@ -33,7 +33,7 @@ module.exports = appInfo => {
       // username
       user: 'root',
       // password
-      password: 'iming..136130',
+      password: 'iming',
       // database
       database: 'imingBlog',    
     },
