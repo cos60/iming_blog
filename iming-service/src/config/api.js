@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:7002/admin';
+export const baseUrl = 'http://api.iming.top/admin';
