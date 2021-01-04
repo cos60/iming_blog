@@ -55,6 +55,7 @@ function Home() {
             <Head>
                 <title>IMING BLOG</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="baidu-site-verification" content="code-3Rbz50whHX" />
             </Head>
             <Header onOK={searchHandle}/>
 
