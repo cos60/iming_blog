@@ -33,7 +33,7 @@ module.exports = appInfo => {
       // username
       user: 'root',
       // password
-      password: 'iming',
+      password: 'iming..136130',
       // database
       database: 'imingBlog',    
     },
@@ -43,10 +43,10 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: {enable: false},
-    domainWhiteList: [ '*' ]
+    domainWhiteList: [ 'http://manager.iming.top', 'http://www.iming.top' ]
   };
   config.cors = {
-    origin: '*', //只允许这个域进行访问接口
+    // origin: "http://127.0.0.1:3000", //只允许这个域进行访问接口
     credentials: true,   // 开启认证
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };

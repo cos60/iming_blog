@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import './index.css'
-import { Spin, Card, Input, Button } from 'antd';
+import { Spin, Card, Input, Button, message } from 'antd';
 import { KeyOutlined, UserOutlined } from '@ant-design/icons';
+import { login } from '../config/login.api';
 
 
 
-function Login() {
+function Login(props) {
 
     const [userName , setUserName] = useState('')
     const [password , setPassword] = useState('')
@@ -13,9 +14,21 @@ function Login() {
 
     const checkLogin = ()=>{
         setIsLoading(true)
-        setTimeout(()=>{
-            setIsLoading(false)
-        },1000)
+        if(userName && password) {
+            login({password, userName}).then(res => {
+                if (res.data.errCode === 0) {
+                    message.success(res.data.msg);
+                    localStorage.setItem('openId',res.data.data.openId);
+                    props.history.push('/')
+                } else {
+                    message.error(res.data.msg);
+                }
+                setIsLoading(false);
+            });
+        } else {
+            message.error('请输入帐号密码');
+            setIsLoading(false);
+        }
     }
 
     return (

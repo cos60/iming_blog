@@ -39,13 +39,13 @@ function Home() {
                             style={{height: '100%'}}
                             >
                             <Menu.Item key="1" icon={<PieChartOutlined />}>
-                                <Link to='/'>网站情况 </Link>
+                                <Link to='/manager'>网站情况 </Link>
                             </Menu.Item>
                             <Menu.Item key="2" icon={<PieChartOutlined />}>
-                                <Link to='/articleList'>文章管理</Link>
+                                <Link to='/manager/articleList'>文章管理</Link>
                             </Menu.Item>
                             <Menu.Item key="3" icon={<DesktopOutlined />}>
-                            <Link to='/category'>分类管理</Link>
+                            <Link to='/manager/category'>分类管理</Link>
                             </Menu.Item>
                             <Menu.Item key="4" icon={<ContainerOutlined />}>
                                 菜单管理
@@ -78,9 +78,9 @@ function Home() {
                             borderRadius: '5px'
                         }}>
                             <div>
-                                <Route path="/articleList/" exact component={ArticleList} />
-                                <Route path="/addArticle/" component={AddArticle} />
-                                <Route path="/category/" component={Category} />
+                                <Route path="/manager/articleList/" exact component={ArticleList} />
+                                <Route path="/manager/addArticle/:id?" component={AddArticle} />
+                                <Route path="/manager/category/" component={Category} />
                             </div>
                         </div>
 

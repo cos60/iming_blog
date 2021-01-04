@@ -5,3 +5,6 @@
 .buttonGroup .btnItem {
     margin-right: 10px;
 }
+.w-e-text-container {
+    z-index: 1 !important;
+}

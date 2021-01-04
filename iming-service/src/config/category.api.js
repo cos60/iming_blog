@@ -9,14 +9,16 @@ const urls = {
 
 export function getArticleType() {
     return axios(urls.getArticleType, {
-        method: 'get'
+        method: 'get',
+        withCredentials: true
     });
 }
 
 export function addType(data) {
     return axios(urls.addType, {
         method: 'post',
-        data
+        data,
+        withCredentials: true
     });
 }
 

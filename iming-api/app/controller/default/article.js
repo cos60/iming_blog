@@ -41,6 +41,8 @@ class ArticleController extends Controller {
     async getArticleDetail() {
         const { id } = this.ctx.query;
 
+    
+
         const mysql =  `
             SELECT article.id as id,
             article.title as title,
