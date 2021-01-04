@@ -18,7 +18,7 @@ import {
 const { Header, Footer, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
-function Home() {
+function Home(props) {
 
     const [ collapsed, setCollapsed ] = useState(false)
 
@@ -29,7 +29,7 @@ function Home() {
     return (
         <div>
             <Layout style={{minHeight: '100vh'}}>
-                <Header style={{color: '#fff'}}>IMING-BLOG</Header>
+                <Header style={{color: '#fff'}} onClick={() => { props.history.push('/login') }}>IMING-BLOG</Header>
                 <Layout>
                     <Sider>
                         <Menu
