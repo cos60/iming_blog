@@ -121,10 +121,10 @@ function Category() {
                     form={addTypeForm}
                 >
                     <Form.Item name='typeName'>
-                        <Input placeholder="input placeholder" />
+                        <Input placeholder="分类名称" />
                     </Form.Item>
                     <Form.Item name='typeOrder'>
-                        <Input placeholder="input placeholder" />
+                        <Input placeholder="分类排序" />
                     </Form.Item>
                 </Form>
             </Modal>
