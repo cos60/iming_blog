@@ -9,15 +9,12 @@ import Personal from '../components/personal';
 import { UnorderedListOutlined, FireOutlined, MessageOutlined } from '@ant-design/icons'
 import { getArticleList, getTypeList, getWebBaseInfo } from '../config/api/home';
 import Link from 'next/link'
-function Home() {
-
-    const [articleList, setArticleList] = useState([]);
+function Home({ posts }) {
+    const [articleList, setArticleList] = useState(posts.data.list || []);
     const [webInfo, setWebInfo] = useState({});
 
     useEffect(() => {
-        getList(0, 20)
         getTypeList().then(res => {
-            console.log('res', res)
         })
         getWebBase();
     }, [])
@@ -53,7 +50,10 @@ function Home() {
     return (
         <div>
             <Head>
-                <title>IMING BLOG</title>
+                <title>杨明戊,IMING BLOG</title>
+                <meta name='description' content='杨明戊个人网站，艾明博客,'/>
+                <meta property="og:description" content='杨明戊个人网站，艾明博客'/>
+                <meta name='keywords' content='杨明戊 杨明戊个人网站 艾明博客'/>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header onOK={searchHandle}/>
@@ -68,7 +68,6 @@ function Home() {
 
                         <h5>最新文章</h5>
                         <Divider style={{margin: '1rem 0'}}/>
-
                         {
                             articleList.map(item => {
                                 return (
@@ -109,4 +108,17 @@ function Home() {
         </div>
     )
 }
-export default Home
+
+export async function getStaticProps() {
+    console.log(123123)
+    const posts = await getArticleList({ page: 0, pageSize: 20 });
+    return {
+        props: {
+            posts: posts.data
+        },
+        revalidate: 1, // In seconds
+    }
+    
+}
+
+export default Home;

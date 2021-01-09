@@ -4,27 +4,45 @@ class ArticleController extends Controller {
 
     async getArticleList() {
         const { page, pageSize, title = '', typeId = '' } = this.ctx.query;
+        let mysql = '', mysql2 = ''
+        if (page == -1) {
+            mysql =  `
+                SELECT article.id as id,
+                article.title as title,
+                article.content as content,
+                article.keyword as keyword,
+                article.intro as intro,
+                article.viewCount as viewCount,
+                article.addTime as addTime,
+                article.typeId as typeId,
+                article.status as status,
+                type.typeName as typeName
+                FROM article LEFT JOIN type ON article.typeId = type.id;
+            `
+        } else {
+            mysql =  `
+                SELECT article.id as id,
+                article.title as title,
+                article.content as content,
+                article.keyword as keyword,
+                article.intro as intro,
+                article.viewCount as viewCount,
+                article.addTime as addTime,
+                article.typeId as typeId,
+                article.status as status,
+                type.typeName as typeName
+                FROM article LEFT JOIN type ON article.typeId = type.id
+                WHERE title LIKE '%${title}%'
+                ${typeId ? `AND typeId = ${typeId}` : ''}
+                limit ${page * pageSize},${page * pageSize + pageSize};
+            `
+        }
 
-        const mysql =  `
-            SELECT article.id as id,
-            article.title as title,
-            article.content as content,
-            article.keyword as keyword,
-            article.intro as intro,
-            article.viewCount as viewCount,
-            article.addTime as addTime,
-            article.typeId as typeId,
-            article.status as status,
-            type.typeName as typeName
-            FROM article LEFT JOIN type ON article.typeId = type.id
-            WHERE title LIKE '%${title}%'
-            ${typeId ? `AND typeId = ${typeId}` : ''}
-            limit ${page * pageSize},${page * pageSize + pageSize};
-        `
-        const mysql2 =  `
+        mysql2 =  `
             SELECT COUNT(*) AS total
             FROM article LEFT JOIN type ON article.typeId = type.id
-        `
+        `;
+
         const result = await this.app.mysql.query(mysql);
         const result2 = await this.app.mysql.query(mysql2);
         
@@ -40,9 +58,6 @@ class ArticleController extends Controller {
 
     async getArticleDetail() {
         const { id } = this.ctx.query;
-
-    
-
         const mysql =  `
             SELECT article.id as id,
             article.title as title,
@@ -72,10 +87,7 @@ class ArticleController extends Controller {
                 viewCount: result[0].viewCount + 1
             }
             const updateRes = await this.app.mysql.update('article', row);
-            console.log('updateRes', updateRes)
-        }
-
-        
+        } 
     }
 
     async getTypeList() {
@@ -91,7 +103,6 @@ class ArticleController extends Controller {
             data: result,
             msg: ''
         }
-
     }
 }
 

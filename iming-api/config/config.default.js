@@ -43,7 +43,7 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: {enable: false},
-    domainWhiteList: [ 'http://admin.iming.top', 'http://www.iming.top' ]
+    domainWhiteList: [ 'http://admin.iming.top', 'http://www.iming.top', 'http://local.iming.top:3000' ]
   };
   config.cors = {
     // origin: "http://127.0.0.1:3000", //只允许这个域进行访问接口
