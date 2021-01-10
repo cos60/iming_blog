@@ -4,11 +4,10 @@
     background-color: #fff;
     border-radius: 1rem;
     overflow: hidden;
-    padding-bottom: 1rem;
 }
 .background {
     position: relative;
-    height: 8rem;
+    height: 7rem;
     background: url(https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2946470956,3918311025&fm=111&gp=0.jpg);
     background-size: 100%;
     margin-bottom: 2.2rem;
@@ -20,7 +19,7 @@
     transform: translate(-50%, 50%);
 }
 .description {
-    padding: 1rem;
+    padding: 0.5rem;
     position: relative;
     top: -1rem;
     text-align: center;

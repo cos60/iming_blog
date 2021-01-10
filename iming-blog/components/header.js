@@ -19,14 +19,31 @@ function Header(props) {
                 justify='center'
                 align='middle'
             >
-                <Col span={2} className={styles.logo}>IMING</Col>
-                <Col span={6} className={styles.logo}>
+                <Col
+                    xxl={2}
+                    xl={2}
+                    lg={3}
+                    md={3}
+                    className={styles.logo}
+                >IMING</Col>
+                <Col
+                    xxl={6}
+                    xl={10}
+                    lg={11}
+                    md={11}
+                    className={styles.logo}
+                >
                     <Search
                         className={styles.searchInput}
                         onSearch={searchHandle}
                     />
                 </Col>
-                <Col span={10}>
+                <Col
+                    xxl={10}
+                    xl={6}
+                    lg={8}
+                    md={9}
+                >
                     <Menu
                         mode='horizontal'
                         className={styles.menu}
@@ -40,21 +57,6 @@ function Header(props) {
                             <Link href='/message'>留言板</Link>
                         </Menu.Item>
                     </Menu>
-                </Col>
-                <Col span={1}>
-                    
-                    {/* <Popover
-                        placement="bottom"
-                        trigger="click"
-                        content={
-                            <div>
-                                <p><a>黑色主题</a></p>
-                                <p><a>明亮主题</a></p>
-                            </div>
-                        }
-                        >
-                        <BgColorsOutlined style={{ fontSize: '1.5rem' }}/>
-                    </Popover> */}
                 </Col>
 
             </Row>

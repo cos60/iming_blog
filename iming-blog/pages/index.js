@@ -63,7 +63,12 @@ function Home({ posts }) {
                 justify='center'
                 align='top'
             >
-                <Col span={14} >
+                <Col
+                    xxl={16}
+                    xl={15}
+                    lg={16}
+                    md={16}
+                >
                     <div className={styles.container}>
 
                         <h5>最新文章</h5>
@@ -95,7 +100,12 @@ function Home({ posts }) {
 
                     </div>
                 </Col>
-                <Col span={4} >
+                <Col
+                    xxl={4}
+                    xl={5}
+                    lg={6}
+                    md={6}
+                >
                     <Affix offsetTop={10}>
                         <Personal webInfo={webInfo}/>
                         <Category getType={getType}/>
