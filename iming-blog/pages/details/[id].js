@@ -18,18 +18,7 @@ function Details(props) {
 
     const [article, setArticle] = useState({});
     
-
-    const router = useRouter()
-    const { id } = router.query;
-    
     useEffect(() => {
-        if (id) {
-            getArticleDetail({ id }).then(res => {
-                setArticle(res.data.data)
-            });
-        }
-        // console.log('enter useEffect');
-        
         setArticle(post)
         setTimeout(() => {
             document.querySelectorAll("pre code").forEach(block => {
@@ -73,7 +62,7 @@ function Details(props) {
 }
 export async function getStaticPaths() {
     
-    const posts = await getArticleList({ page: -1}).then();
+    const posts = await getArticleList({ page: -1 }).then();
     
     const { list } = posts.data.data;
     const paths = list.map(res => {
@@ -86,6 +75,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
+
     
     const post = await getArticleDetail({ id: params.id }).then();
     return {
