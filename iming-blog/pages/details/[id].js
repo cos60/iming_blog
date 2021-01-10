@@ -19,7 +19,6 @@ function Details(props) {
     const [article, setArticle] = useState({});
     
     useEffect(() => {
-        console.log('useEffect')
         getArticleDetail({ id: postId }).then(res => {
             setArticle(res.data.data);
             setTimeout(() => {
