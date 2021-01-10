@@ -110,7 +110,6 @@ function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-    console.log(123123)
     const posts = await getArticleList({ page: 0, pageSize: 20 });
     return {
         props: {

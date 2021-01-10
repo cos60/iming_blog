@@ -14,18 +14,22 @@ import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
  
 function Details(props) {
-    const { post } = props;
+    const { postId } = props;
 
     const [article, setArticle] = useState({});
     
     useEffect(() => {
-        setArticle(post)
-        setTimeout(() => {
-            document.querySelectorAll("pre code").forEach(block => {
-                try{hljs.highlightBlock(block);}
-                catch(e){console.log(e);}
+        console.log('useEffect')
+        getArticleDetail({ id: postId }).then(res => {
+            setArticle(res.data.data);
+            setTimeout(() => {
+                document.querySelectorAll("pre code").forEach(block => {
+                    try{hljs.highlightBlock(block);}
+                    catch(e){console.log(e);}
+                });
             });
         });
+
     }, []);
     return (
         <div>
@@ -76,11 +80,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
 
-    
-    const post = await getArticleDetail({ id: params.id }).then();
     return {
         props: {
-            post: post.data.data
+            postId: params.id 
         },
         revalidate: 1, // In seconds
     }
