@@ -12,9 +12,6 @@ body {
   opacity: 1;
   
 }
-* {
-  opacity: 0.98;
-}
 
 body::before {
   background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1936018656,343641975&fm=26&gp=0.jpg');

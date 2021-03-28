@@ -23,9 +23,12 @@ function Details(props) {
             setArticle(res.data.data);
             setTimeout(() => {
                 document.querySelectorAll("pre code").forEach(block => {
-                    try{hljs.highlightBlock(block);}
+                    block.innerHTML = block.textContent;
+
+                    try{console.log(hljs.highlightBlock(block))}
                     catch(e){console.log(e);}
                 });
+                // hljs.highlightBlock(document.getElementById("codes"));
             });
         });
 
