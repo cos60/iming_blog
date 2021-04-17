@@ -10,6 +10,7 @@ import { UnorderedListOutlined, FireOutlined, MessageOutlined } from '@ant-desig
 import { getArticleList, getTypeList, getWebBaseInfo } from '../config/api/home';
 import Link from 'next/link'
 function Home({ posts }) {
+    console.log('posts', posts)
     const [articleList, setArticleList] = useState(posts.data.list || []);
     const [webInfo, setWebInfo] = useState({});
 
@@ -80,7 +81,7 @@ function Home({ posts }) {
                                         <Row>
                                             <Col>
                                                 <h2 className={styles.contentTitle}>
-                                                    <Link href={`details/${item.id}`}>
+                                                    <Link href={`details/${item.id}`} >
                                                         { item.title }
                                                     </Link>
                                                 </h2>
@@ -105,6 +106,7 @@ function Home({ posts }) {
                     xl={5}
                     lg={6}
                     md={6}
+                    xs={0}
                 >
                     <Affix offsetTop={10}>
                         <Personal webInfo={webInfo}/>
