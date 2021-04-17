@@ -6,7 +6,7 @@ function Footer() {
                     textAlign: 'center',
                     height:'4rem',
                     lineHeight: '4rem',
-                    backgroundColor: 'rgb(221 203 207)',
+                    backgroundColor: '#252525',
                     color: '#fff',
                     position: 'absolute',
                     bottom: '0',
