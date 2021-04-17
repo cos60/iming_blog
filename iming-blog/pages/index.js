@@ -10,7 +10,6 @@ import { UnorderedListOutlined, FireOutlined, MessageOutlined } from '@ant-desig
 import { getArticleList, getTypeList, getWebBaseInfo } from '../config/api/home';
 import Link from 'next/link'
 function Home({ posts }) {
-    console.log('posts', posts)
     const [articleList, setArticleList] = useState(posts.data.list || []);
     const [webInfo, setWebInfo] = useState({});
 

@@ -7,7 +7,6 @@ import { getTypeList } from '../config/api/home';
 
 
 function Category(props) {
-    console.log('header', props)
     const [ typeList, setTypeList ] = useState([]);
     useEffect(() => {
         getList();
