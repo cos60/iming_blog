@@ -44,7 +44,7 @@ function Details(props) {
             </Head>
             <Header />
             <Row justify='center'>
-                <Col span={18}>
+                <Col span={23}>
 
                     <div className={styles.container}>
                         <h2 style={{ textAlign: 'center' }}> {article.title} </h2>
